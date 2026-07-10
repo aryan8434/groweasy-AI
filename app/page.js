@@ -506,10 +506,13 @@ No Contact Lead,,,No Company`;
               {/* Theme Toggle */}
               <button 
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="btn btn-secondary btn-circle"
+                className="btn btn-secondary"
+                style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}
                 title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+                id="theme-toggle"
               >
                 {theme === 'dark' ? <Sun size={16} style={{ color: '#fbbf24' }} /> : <Moon size={16} style={{ color: '#6366f1' }} />}
+                <span>{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
               </button>
 
               {/* Engine Selection Option */}
@@ -852,6 +855,24 @@ No Contact Lead,,,No Company`;
               </button>
             </div>
           )}
+
+          {/* Footer */}
+          <footer style={{ 
+            marginTop: 'auto', 
+            paddingTop: '2rem', 
+            borderTop: '1px solid var(--border-color)', 
+            textAlign: 'center',
+            fontSize: '0.85rem',
+            color: 'var(--text-muted)',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.35rem'
+          }}>
+            <span>Made by <strong>Aryan Kumar Raj</strong></span>
+            <span style={{ fontSize: '0.8rem', color: 'var(--accent-primary)', fontWeight: '600' }}>
+              API Keys will be valid only till 20 July 2026
+            </span>
+          </footer>
         </div>
       </main>
 

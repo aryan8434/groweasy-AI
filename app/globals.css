@@ -232,6 +232,8 @@ p {
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-speed);
+  background: transparent;
+  border: 1px solid transparent;
 }
 
 .sidebar-link:hover {
@@ -239,15 +241,26 @@ p {
   background: var(--bg-tertiary);
 }
 
+/* Dark Mode (default): Unselected is dark/transparent, Active is light/white */
 .sidebar-link.active {
-  color: var(--text-primary);
-  background: rgba(139, 92, 246, 0.08);
-  border: 1px solid rgba(139, 92, 246, 0.15);
+  color: #09090b !important;
+  background: #ffffff !important;
+  border: 1px solid #ffffff !important;
 }
 
+.sidebar-link.active svg {
+  color: #09090b !important;
+}
+
+/* Light Mode: Unselected is light/transparent, Active is dark/slate */
 body.light-theme .sidebar-link.active {
-  background: rgba(139, 92, 246, 0.06);
-  border: 1px solid rgba(139, 92, 246, 0.12);
+  color: #ffffff !important;
+  background: #09090b !important;
+  border: 1px solid #09090b !important;
+}
+
+body.light-theme .sidebar-link.active svg {
+  color: #ffffff !important;
 }
 
 .sidebar-link svg {
@@ -255,8 +268,7 @@ body.light-theme .sidebar-link.active {
   transition: color var(--transition-speed);
 }
 
-.sidebar-link:hover svg,
-.sidebar-link.active svg {
+.sidebar-link:hover svg {
   color: var(--accent-primary);
 }
 

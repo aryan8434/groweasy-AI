@@ -1,0 +1,18 @@
+{
+  "name": "groweasy-crm-ai-importer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "groq-sdk": "^0.3.3",
+    "lucide-react": "^0.379.0",
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}

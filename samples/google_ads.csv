@@ -1,0 +1,5 @@
+date,client_name,primary_email,contact_no,company,city_name,state_name,country_name,owner,lead_status,comments_notes,possession_timeline,lead_desc
+05/13/2026 14:20:48,Amit Sharma,amit.sharma@example.com,9876543214,GrowEasy,Mumbai,Maharashtra,India,test@gmail.com,GOOD_LEAD_FOLLOW_UP,Needs details on residential plots,Ready to move,Client interested in 2BHK flat
+05/13/2026 14:25:30,Vikram Malhotra,vikram@example.com,9876543215,Alpha Corp,Gurugram,Haryana,India,test@gmail.com,DID_NOT_CONNECT,Call back tomorrow,,
+05/13/2026 14:30:15,Karan Johar,karan@example.com,9876543216,Dharma,Mumbai,Maharashtra,India,test@gmail.com,BAD_LEAD,Incorrect phone number,1 year,Wrong number dialled
+05/13/2026 14:35:22,Meera Sen,meera@example.com,9876543217,TCS,Kolkata,West Bengal,India,test@gmail.com,SALE_DONE,Booking advance received,Immediate,Paid token money

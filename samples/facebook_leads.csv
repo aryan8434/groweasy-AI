@@ -1,0 +1,5 @@
+created_time,full_name,email_address,phone_number,company_name,city_location,status_code,source,comments
+2026-05-13 14:20:48,John Doe,john.doe@example.com,+91 9876543210,GrowEasy,Mumbai,GOOD_LEAD_FOLLOW_UP,leads_on_demand,Client is asking to reschedule demo
+2026-05-13 14:25:30,Sarah Johnson,sarah.johnson@example.com,+91 9876543211,Tech Solutions,Bangalore,DID_NOT_CONNECT,meridian_tower,Person was busy
+2026-05-13 14:30:15,Rajesh Patel,rajesh.patel@example.com,+91 9876543212,Startup Inc,Delhi,BAD_LEAD,eden_park,Not interested in our services
+2026-05-13 14:35:22,Priya Singh,priya.singh@example.com,+91 9876543213,Enterprise Corp,Pune,SALE_DONE,varah_swamy,Deal closed onboarding in progress

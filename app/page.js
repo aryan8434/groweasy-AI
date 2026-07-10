@@ -41,7 +41,14 @@ export default function CSVImporterHome() {
   
   // Loading sub-steps simulation
   const [currentLoadingStep, setCurrentLoadingStep] = useState(0);
-  const loadingSteps = [
+  const loadingSteps = engine === 'gemini' ? [
+    'Initializing Gemini AI engine mapping...',
+    'Uploading CSV rows to extraction service...',
+    'Matching header layouts to CRM schema (using gemini-3.5-flash)...',
+    'Injecting dates, data source origins, and lead notes...',
+    'Applying CRM validation filters (skipping invalid entries)...',
+    'Compiling final structured JSON response...'
+  ] : [
     'Initializing Groq AI engine mapping...',
     'Uploading CSV rows to extraction service...',
     'Matching header layouts to CRM schema (using llama-3.3-70b-versatile)...',
@@ -398,7 +405,7 @@ No Contact Lead,,,No Company`;
                     }}
                   >
                     <option value="groq">Groq AI (Llama 3.3)</option>
-                    <option value="gemini">Gemini AI (1.5 Flash)</option>
+                    <option value="gemini">Gemini AI (3.5 Flash)</option>
                   </select>
                 </div>
                 
@@ -450,10 +457,13 @@ No Contact Lead,,,No Company`;
             <div className="loader-wrapper">
               <div className="spinner"></div>
               <h2 className="step-title" style={{ textAlign: 'center', fontSize: '1.5rem' }}>
-                Extracting Leads using Groq AI
+                Extracting Leads using {engine === 'gemini' ? 'Gemini' : 'Groq'} AI
               </h2>
               <p style={{ color: 'var(--text-secondary)', textAlign: 'center', fontSize: '0.9rem' }}>
-                Groq's Llama 3.3 model is parsing structures, validating columns, and cleansing your data. Please don't close this window.
+                {engine === 'gemini' 
+                  ? "Gemini's 3.5 Flash model is parsing structures, validating columns, and cleansing your data. Please don't close this window."
+                  : "Groq's Llama 3.3 model is parsing structures, validating columns, and cleansing your data. Please don't close this window."
+                }
               </p>
 
               <div className="loading-steps">

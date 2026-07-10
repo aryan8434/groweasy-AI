@@ -1,0 +1,4 @@
+created_at,name,email,country_code,mobile_without_country_code,company,city,state,country,lead_owner,crm_status,crm_note,data_source,possession_time,description
+2026-07-10 10:00:00,John Doe,john.doe@example.com,91,9876543210,GrowEasy,Mumbai,Maharashtra,India,agent_john@groweasy.com,GOOD_LEAD_FOLLOW_UP,Interested in flats,leads_on_demand,Immediate,Wants 2BHK flat details
+2026-07-10 11:00:00,Sarah Connor,sarah.connor@example.com,1,5550199,Cyberdyne,Los Angeles,California,USA,agent_sarah@groweasy.com,DID_NOT_CONNECT,Call back later,meridian_tower,1 year,Looking for commercial plot
+2026-07-10 12:00:00,Amit Sharma,amit@gmail.com,91,9811223344,,Delhi,Delhi,India,,SALE_DONE,Token amount received,sarajapur_plots,,Ready to close deal

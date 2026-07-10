@@ -696,18 +696,33 @@ body.light-theme .glass-card {
 }
 
 body.light-theme .responsive-table th {
-  color: var(--text-primary);
-  background-color: var(--bg-tertiary);
+  color: #000000 !important;
+  background-color: #f1f5f9 !important;
   border-bottom: 1px solid var(--border-color);
 }
 
 body.light-theme .responsive-table td {
   border-bottom: 1px solid var(--border-color);
-  color: var(--text-secondary);
+  color: #000000 !important;
+  background-color: #ffffff !important;
+}
+
+body.light-theme .responsive-table {
+  background-color: #ffffff !important;
+}
+
+body.light-theme .table-container {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1px solid var(--border-color);
 }
 
 body.light-theme .responsive-table tr:hover {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: #f8fafc !important;
+}
+
+body.light-theme .responsive-table tr:hover td {
+  background-color: #f8fafc !important;
 }
 
 body.light-theme .step-title,

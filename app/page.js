@@ -26,6 +26,7 @@ export default function CSVImporterHome() {
   const [step, setStep] = useState(1);
   const [file, setFile] = useState(null);
   const [theme, setTheme] = useState('dark');
+  const [engine, setEngine] = useState('groq'); // 'groq' | 'gemini'
 
   useEffect(() => {
     document.body.className = theme === 'light' ? 'light-theme' : '';
@@ -148,7 +149,7 @@ export default function CSVImporterHome() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ rows: rawRows }),
+        body: JSON.stringify({ rows: rawRows, engine }),
       });
 
       if (!response.ok) {
@@ -374,13 +375,41 @@ No Contact Lead,,,No Company`;
                   Found <strong>{rawRows.length}</strong> rows inside <code>{rawFilename}</code>. No AI processing has started.
                 </p>
               </div>
-              <div style={{ display: 'flex', gap: '0.75rem' }}>
-                <button className="btn btn-secondary" onClick={handleReset} id="btn-back-upload">
-                  <ArrowLeft size={16} /> Back to Upload
-                </button>
-                <button className="btn btn-primary" onClick={handleConfirmImport} id="btn-confirm-import">
-                  <Sparkles size={16} /> Confirm Import (Process AI)
-                </button>
+              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', minWidth: '160px' }}>
+                  <label htmlFor="ai-engine-select" style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', fontWeight: '600' }}>
+                    Select AI Engine:
+                  </label>
+                  <select
+                    id="ai-engine-select"
+                    value={engine}
+                    onChange={(e) => setEngine(e.target.value)}
+                    style={{
+                      padding: '0.5rem 1rem',
+                      borderRadius: '8px',
+                      background: 'var(--bg-tertiary)',
+                      color: 'var(--text-primary)',
+                      border: '1px solid var(--border-color)',
+                      fontFamily: 'var(--font-body)',
+                      fontSize: '0.85rem',
+                      fontWeight: '600',
+                      cursor: 'pointer',
+                      outline: 'none',
+                    }}
+                  >
+                    <option value="groq">Groq AI (Llama 3.3)</option>
+                    <option value="gemini">Gemini AI (1.5 Flash)</option>
+                  </select>
+                </div>
+                
+                <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem' }}>
+                  <button className="btn btn-secondary" onClick={handleReset} id="btn-back-upload">
+                    <ArrowLeft size={16} /> Back to Upload
+                  </button>
+                  <button className="btn btn-primary" onClick={handleConfirmImport} id="btn-confirm-import">
+                    <Sparkles size={16} /> Confirm Import (Process AI)
+                  </button>
+                </div>
               </div>
             </div>
 

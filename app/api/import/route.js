@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
 import { identifySchemaMapping, mapRowsLocally } from '../../utils/groqService';
+import { identifySchemaMappingGemini } from '../../utils/geminiService';
 
 export async function POST(req) {
   try {
-    const { rows } = await req.json();
+    const { rows, engine = 'groq' } = await req.json();
 
     if (!rows || !Array.isArray(rows)) {
       return NextResponse.json(
@@ -29,11 +30,16 @@ export async function POST(req) {
     // 2. Get first 3 rows as samples for data shape context
     const sampleRows = rows.slice(0, 3);
 
-    console.log('Serverless: Sending CSV structure to Groq for header mapping analysis...');
+    console.log(`Serverless: Sending CSV structure to ${engine.toUpperCase()} for header mapping analysis...`);
     
-    // 3. Request schema mapping from Groq AI (one call only!)
-    const mapping = await identifySchemaMapping(headers, sampleRows);
-    console.log('Serverless: Groq AI mapped headers successfully:', mapping);
+    // 3. Request schema mapping from selected AI (one call only!)
+    let mapping = {};
+    if (engine === 'gemini') {
+      mapping = await identifySchemaMappingGemini(headers, sampleRows);
+    } else {
+      mapping = await identifySchemaMapping(headers, sampleRows);
+    }
+    console.log(`Serverless: ${engine.toUpperCase()} mapped headers successfully:`, mapping);
 
     // 4. Map all rows locally programmatically (fast, zero rate limits!)
     const { imported, skipped } = mapRowsLocally(rows, mapping);
@@ -47,6 +53,7 @@ export async function POST(req) {
       totalSkipped: skipped.length,
       totalProcessed: rows.length,
       mappingUsed: mapping,
+      engineUsed: engine,
     });
   } catch (error) {
     console.error('Error in API import route:', error);

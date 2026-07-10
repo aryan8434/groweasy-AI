@@ -281,21 +281,24 @@ a:hover {
 
 /* Scrollbars */
 .table-container::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 .table-container::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-radius: 5px;
 }
 
 .table-container::-webkit-scrollbar-thumb {
-  background: var(--bg-tertiary);
-  border-radius: 4px;
+  background: #334155 !important; /* Dark Slate Gray */
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
 }
 
 .table-container::-webkit-scrollbar-thumb:hover {
-  background: var(--border-color-hover);
+  background: #0f172a !important; /* Deep Dark Slate */
 }
 
 .responsive-table {

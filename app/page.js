@@ -161,18 +161,7 @@ export default function CSVImporterHome() {
       setStep(4); // Show metrics & mapping table
     } catch (err) {
       console.error(err);
-      let errMsg = err.message || '';
-      if (
-        errMsg.toLowerCase().includes('rate limit') || 
-        errMsg.includes('429') || 
-        errMsg.toLowerCase().includes('rate_limit') || 
-        errMsg.toLowerCase().includes('limit exceeded')
-      ) {
-        errMsg = 'Error due to rate limit exceeded in website. Please try again after some time.';
-      } else {
-        errMsg = errMsg || 'An error occurred during AI mapping.';
-      }
-      setError(errMsg);
+      setError(err.message || 'An error occurred during AI mapping.');
       setStep(2); // Go back to preview if there's an error
     } finally {
       setLoading(false);

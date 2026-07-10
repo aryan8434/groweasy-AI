@@ -50,15 +50,7 @@ export async function POST(req) {
     });
   } catch (error) {
     console.error('Error in API import route:', error);
-    let message = error.message || String(error);
-    if (
-      message.toLowerCase().includes('rate limit') || 
-      message.includes('429') || 
-      message.toLowerCase().includes('rate_limit') || 
-      message.toLowerCase().includes('limit exceeded')
-    ) {
-      message = 'Error due to rate limit exceeded in website. Please try again after some time.';
-    }
+    const message = error.message || String(error);
     return NextResponse.json(
       { error: message },
       { status: 500 }

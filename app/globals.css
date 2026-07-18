@@ -116,13 +116,20 @@ p {
 .sidebar-logo {
   width: 32px;
   height: 32px;
-  background: var(--accent-secondary);
+  background: transparent;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.2);
+}
+
+.sidebar-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .sidebar-brand-name {

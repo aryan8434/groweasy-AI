@@ -3,6 +3,9 @@ import './globals.css';
 export const metadata = {
   title: 'GrowEasy CRM - AI CSV Lead Importer',
   description: 'Upload lead lists in any CSV format and let AI map, extract, and clean CRM leads automatically for GrowEasy.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export const viewport = {

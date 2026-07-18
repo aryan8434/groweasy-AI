@@ -439,7 +439,11 @@ No Contact Lead,,,No Company`;
       <aside className="sidebar">
         <div className="sidebar-brand">
           <div className="sidebar-logo">
-            <LayoutDashboard size={18} />
+            <img
+              src="/f3e5c6de-aaf0-4747-9768-bd472973ed2b.jpg"
+              alt="AI CSV Analytics logo"
+              className="sidebar-logo-image"
+            />
           </div>
           <span className="sidebar-brand-name">GrowEasy</span>
         </div>
@@ -870,7 +874,7 @@ No Contact Lead,,,No Company`;
           }}>
             <span>Made by <strong>Aryan Kumar Raj</strong></span>
             <span style={{ fontSize: '0.8rem', color: 'var(--accent-primary)', fontWeight: '600' }}>
-              API Keys will be valid only till 20 July 2026
+              Groq API key will be valid till 8 August 2026. If it's not working, contact admin.
             </span>
           </footer>
         </div>

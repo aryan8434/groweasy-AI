@@ -3,8 +3,8 @@
 AI-powered CSV importing for messy lead data, built as a polished CRM dashboard with AI header mapping, clean review flows, and fast serverless routes.
 
 <p align="center">
-   <a href="https://groweasy-ai-five.vercel.app/">
-      <img src="https://img.shields.io/badge/Live%20Demo-0ea5e9?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo" />
+   <a href="https://groweasy.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <img src="https://img.shields.io/badge/groweasy.vercel.app-0ea5e9?style=for-the-badge&logo=vercel&logoColor=white" alt="groweasy.vercel.app" />
    </a>
    <a href="#architecture">
       <img src="https://img.shields.io/badge/Architecture-111827?style=for-the-badge&logo=diagramsdotnet&logoColor=white" alt="Architecture" />
